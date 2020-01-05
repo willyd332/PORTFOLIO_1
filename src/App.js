@@ -13,66 +13,86 @@ import Project3 from './components/ProjectsPage/Project3.jsx'
 import Project4 from './components/ProjectsPage/Project4.jsx'
 import Project5 from './components/ProjectsPage/Project5.jsx'
 
-// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
-// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
-
 // Variables
 var width = Math.max(window.innerWidth);
 var height = Math.max(window.innerHeight);
 
 console.log(width + " " + height);
 
-const getDimension = () => {
-
+const getDimension = (dimension) => {
+  switch (dimension) {
+  case "left":
+    return({left: 0});
+  case "second":
+    return({left: window.innerWidth});
+  case "third":
+    return({left: window.innerWidth * 2});
+  case "fourth":
+    return({left: window.innerWidth * 3});
+  case "vertFirst":
+    return({top: window.innerHeight});
+  case "vertSecond":
+    return({top: window.innerHeight * 2});
+  case "vertThird":
+    return({top: window.innerHeight * 3});
+  case "vertFourth":
+    return({top: window.innerHeight * 4});
+  case "vertFifth":
+    return({top: window.innerHeight * 5});
+}
 }
 
-const left = {left: 0};
-const second = {left: width};
-const third = {left: width * 2};
-const fourth = {left: width * 3};
-const vertFirst = {top: height}
-const vertSecond = {top: height * 2}
-const vertThird = {top: height * 3}
-const vertFourth = {top: height * 4}
-const vertFifth = {top: height * 5}
 
 const initialStyles = [
-  left,
-  second,
-  third,
-  fourth,
-  {left: 0 - width}
+  getDimension('left'),
+  getDimension('second'),
+  getDimension('third'),
+  getDimension('fourth'),
+  {left: 0 - window.innerWidth}
 ]
 
 const initialVerticalStyles = [
-  vertFirst,
-  vertSecond,
-  vertThird,
-  vertFourth,
-  vertFifth,
+  getDimension('vertFirst'),
+  getDimension('vertSecond'),
+  getDimension('vertThird'),
+  getDimension('vertFourth'),
+  getDimension('vertFifth'),
 ]
 
-// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
-// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
 
 
 function App() {
 
-// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
-// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
-  const reload = () => {
-    window.location.reload(false);
-  }
+  const reset = () => {
+    // window.location.reload(false);
 
-  window.addEventListener('resize', reload);
-// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
-// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
+    console.log("het")
+
+    if (pageCounter === 1){
+      setStyles([{left: 0 - window.innerWidth},getDimension('left'),getDimension('second'),getDimension('third'),getDimension('fourth')]);
+      setPageCounter(1);
+    } else if (pageCounter === 2) {
+      setStyles([getDimension('fourth'),{left: 0 - window.innerWidth},getDimension('left'),getDimension('second'),getDimension('third')]);
+      setPageCounter(2);
+    } else if (pageCounter === 3) {
+      setStyles([getDimension('third'),getDimension('fourth'),{left: 0 - window.innerWidth},getDimension('left'),getDimension('second')]);
+      setPageCounter(3);
+    } else if (pageCounter === 4) {
+      setStyles([getDimension('second'),getDimension('third'),getDimension('fourth'),{left: 0 - window.innerWidth},getDimension('left')]);
+      setPageCounter(4);
+    } else if (pageCounter === 0) {
+      setStyles([getDimension('left'),getDimension('second'),getDimension('third'),getDimension('fourth'),{left: 0 - window.innerWidth}]);
+      setPageCounter(0);
+    }
+
+  }
 
 
   let mainDiv;
 
 // Focuses on the main div so arrowkey event listeners are activated
   React.useEffect(()=>{
+    window.addEventListener('resize',reset)
     mainDiv.focus();
   }, []);
 
@@ -98,12 +118,12 @@ function App() {
     let positionFour = styles[3].left;
     let positionFive = styles[4].left;
 
-    const final = positionOne - width;
+    const final = positionOne - window.innerWidth;
 
-    const finalTwo = positionTwo - width;
-    const finalThree = positionThree - width;
-    const finalFour = positionFour - width;
-    const finalFive = positionFive - width;
+    const finalTwo = positionTwo - window.innerWidth;
+    const finalThree = positionThree - window.innerWidth;
+    const finalFour = positionFour - window.innerWidth;
+    const finalFive = positionFive - window.innerWidth;
 
     const animateSlide = () => {
 
@@ -147,19 +167,19 @@ function App() {
     }
 
     if (pageCounter === 0){
-      setStyles([{left: 0 - width},left,second,third,fourth]);
+      setStyles([{left: 0 - window.innerWidth},getDimension('left'),getDimension('second'),getDimension('third'),getDimension('fourth')]);
       setPageCounter(1);
     } else if (pageCounter === 1) {
-      setStyles([fourth,{left: 0 - width},left,second,third]);
+      setStyles([getDimension('fourth'),{left: 0 - window.innerWidth},getDimension('left'),getDimension('second'),getDimension('third')]);
       setPageCounter(2);
     } else if (pageCounter === 2) {
-      setStyles([third,fourth,{left: 0 - width},left,second]);
+      setStyles([getDimension('third'),getDimension('fourth'),{left: 0 - window.innerWidth},getDimension('left'),getDimension('second')]);
       setPageCounter(3);
     } else if (pageCounter === 3) {
-      setStyles([second,third,fourth,{left: 0 - width},left]);
+      setStyles([getDimension('second'),getDimension('third'),getDimension('fourth'),{left: 0 - window.innerWidth},getDimension('left')]);
       setPageCounter(4);
     } else if (pageCounter === 4) {
-      setStyles([left,second,third,fourth,{left: 0 - width}]);
+      setStyles([getDimension('left'),getDimension('second'),getDimension('third'),getDimension('fourth'),{left: 0 - window.innerWidth}]);
       setPageCounter(0);
     }
   }
@@ -174,12 +194,12 @@ function App() {
     let positionFour = styles[3].left;
     let positionFive = styles[4].left;
 
-    const final = positionOne + width;
+    const final = positionOne + window.innerWidth;
 
-    const finalTwo = positionTwo + width;
-    const finalThree = positionThree + width;
-    const finalFour = positionFour + width;
-    const finalFive = positionFive + width;
+    const finalTwo = positionTwo + window.innerWidth;
+    const finalThree = positionThree + window.innerWidth;
+    const finalFour = positionFour + window.innerWidth;
+    const finalFive = positionFive + window.innerWidth;
 
     const animateSlide = () => {
 
@@ -223,19 +243,19 @@ function App() {
 
 
     if (pageCounter === 0){
-      setStyles([second,third,fourth,{left: 0 - width},left]);
+      setStyles([getDimension('second'),getDimension('third'),getDimension('fourth'),{left: 0 - window.innerWidth},getDimension('left')]);
       setPageCounter(4);
     } else if (pageCounter === 1) {
-      setStyles([left,second,third,fourth,{left: 0 - width}]);
+      setStyles([getDimension('left'),getDimension('second'),getDimension('third'),getDimension('fourth'),{left: 0 - window.innerWidth}]);
       setPageCounter(0);
     } else if (pageCounter === 2) {
-      setStyles([{left: 0 - width},left,second,third,fourth]);
+      setStyles([{left: 0 - window.innerWidth},getDimension('left'),getDimension('second'),getDimension('third'),getDimension('fourth')]);
       setPageCounter(1);
     } else if (pageCounter === 3) {
-      setStyles([fourth,{left: 0 - width},left,second,third]);
+      setStyles([getDimension('fourth'),{left: 0 - window.innerWidth},getDimension('left'),getDimension('second'),getDimension('third')]);
       setPageCounter(2);
     } else if (pageCounter === 4) {
-      setStyles([third,fourth,{left: 0 - width},left,second]);
+      setStyles([getDimension('third'),getDimension('fourth'),{left: 0 - window.innerWidth},getDimension('left'),getDimension('second')]);
       setPageCounter(3);
     }
   }
@@ -253,15 +273,15 @@ function App() {
       const divs = document.getElementsByClassName("mainSection");
       const projectDivs = document.getElementsByClassName("projectBox");
 
-      const final = -height;
+      const final = -window.innerHeight;
 
       let topPosition = 0;
 
-      let firstProjectTop = height;
-      let secondProjectTop = height * 2;
-      let thirdProjectTop = height * 3;
-      let fourthProjectTop = height * 4;
-      let fifthProjectTop = height * 5;
+      let firstProjectTop = window.innerHeight;
+      let secondProjectTop = window.innerHeight * 2;
+      let thirdProjectTop = window.innerHeight * 3;
+      let fourthProjectTop = window.innerHeight * 4;
+      let fifthProjectTop = window.innerHeight * 5;
 
       const animateAllSlideUp = () => {
 
@@ -296,10 +316,10 @@ function App() {
           divs[3].style.top = final + "px";
           divs[4].style.top = final + "px";
           projectDivs[0].style.top = 0 + "px";
-          projectDivs[1].style.top = height + "px";
-          projectDivs[2].style.top = height * 2 + "px";
-          projectDivs[3].style.top = height * 3 + "px";
-          projectDivs[4].style.top = height * 4 + "px";
+          projectDivs[1].style.top = window.innerHeight + "px";
+          projectDivs[2].style.top = window.innerHeight * 2 + "px";
+          projectDivs[3].style.top = window.innerHeight * 3 + "px";
+          projectDivs[4].style.top = window.innerHeight * 4 + "px";
         }
       }
 
@@ -321,13 +341,13 @@ function App() {
 
       const projectDivs = document.getElementsByClassName("projectBox");
 
-      let firstProjectTop = -(height * projectsIndex);
-      let secondProjectTop = firstProjectTop + height;
-      let thirdProjectTop = secondProjectTop + height;
-      let fourthProjectTop = thirdProjectTop + height;
-      let fifthProjectTop = fourthProjectTop + height;
+      let firstProjectTop = -(window.innerHeight * projectsIndex);
+      let secondProjectTop = firstProjectTop + window.innerHeight;
+      let thirdProjectTop = secondProjectTop + window.innerHeight;
+      let fourthProjectTop = thirdProjectTop + window.innerHeight;
+      let fifthProjectTop = fourthProjectTop + window.innerHeight;
 
-      const projectFinal = firstProjectTop - height;
+      const projectFinal = firstProjectTop - window.innerHeight;
 
       const animateProjectsAllSlideUp = () => {
 
@@ -352,10 +372,10 @@ function App() {
           setAnimating(false);
           setProjectsIndex(projectsIndex + 1);
           projectDivs[0].style.top = projectFinal + "px";
-          projectDivs[1].style.top = projectFinal + height + "px";
-          projectDivs[2].style.top = projectFinal + (height * 2) + "px";
-          projectDivs[3].style.top = projectFinal + (height * 3) + "px";
-          projectDivs[4].style.top = projectFinal + (height * 4) + "px";
+          projectDivs[1].style.top = projectFinal + window.innerHeight + "px";
+          projectDivs[2].style.top = projectFinal + (window.innerHeight * 2) + "px";
+          projectDivs[3].style.top = projectFinal + (window.innerHeight * 3) + "px";
+          projectDivs[4].style.top = projectFinal + (window.innerHeight * 4) + "px";
 
         }
       }
@@ -380,12 +400,12 @@ function App() {
 
       const final = 0;
 
-      let topPosition = -height;
+      let topPosition = -window.innerHeight;
       let firstProjectTop = 0
-      let secondProjectTop = height;
-      let thirdProjectTop = height * 2;
-      let fourthProjectTop = height * 3;
-      let fifthProjectTop = height * 4;
+      let secondProjectTop = window.innerHeight;
+      let thirdProjectTop = window.innerHeight * 2;
+      let fourthProjectTop = window.innerHeight * 3;
+      let fifthProjectTop = window.innerHeight * 4;
 
       const animateAllSlideDown = () => {
 
@@ -417,11 +437,11 @@ function App() {
           divs[2].style.top = final;
           divs[3].style.top = final;
           divs[4].style.top = final;
-          projectDivs[0].style.top = height + "px";
-          projectDivs[1].style.top = height * 2 + "px";
-          projectDivs[2].style.top = height * 3 + "px";
-          projectDivs[3].style.top = height * 4 + "px";
-          projectDivs[4].style.top = height * 5 + "px";
+          projectDivs[0].style.top = window.innerHeight + "px";
+          projectDivs[1].style.top = window.innerHeight * 2 + "px";
+          projectDivs[2].style.top = window.innerHeight * 3 + "px";
+          projectDivs[3].style.top = window.innerHeight * 4 + "px";
+          projectDivs[4].style.top = window.innerHeight * 5 + "px";
         }
       }
 
@@ -442,13 +462,13 @@ function App() {
 
       const projectDivs = document.getElementsByClassName("projectBox");
 
-      let firstProjectTop = -(height * projectsIndex);
-      let secondProjectTop = firstProjectTop + height;
-      let thirdProjectTop = secondProjectTop + height;
-      let fourthProjectTop = thirdProjectTop + height;
-      let fifthProjectTop = fourthProjectTop + height;
+      let firstProjectTop = -(window.innerHeight * projectsIndex);
+      let secondProjectTop = firstProjectTop + window.innerHeight;
+      let thirdProjectTop = secondProjectTop + window.innerHeight;
+      let fourthProjectTop = thirdProjectTop + window.innerHeight;
+      let fifthProjectTop = fourthProjectTop + window.innerHeight;
 
-      const projectFinal = firstProjectTop + height;
+      const projectFinal = firstProjectTop + window.innerHeight;
 
       const animateProjectsAllSlideDown = () => {
 
@@ -473,10 +493,10 @@ function App() {
           setAnimating(false);
           setProjectsIndex(projectsIndex - 1);
           projectDivs[0].style.top = projectFinal + "px";
-          projectDivs[1].style.top = projectFinal + height + "px";
-          projectDivs[2].style.top = projectFinal + (height * 2) + "px";
-          projectDivs[3].style.top = projectFinal + (height * 3) + "px";
-          projectDivs[4].style.top = projectFinal + (height * 4) + "px";
+          projectDivs[1].style.top = projectFinal + window.innerHeight + "px";
+          projectDivs[2].style.top = projectFinal + (window.innerHeight * 2) + "px";
+          projectDivs[3].style.top = projectFinal + (window.innerHeight * 3) + "px";
+          projectDivs[4].style.top = projectFinal + (window.innerHeight * 4) + "px";
 
         }
       }
