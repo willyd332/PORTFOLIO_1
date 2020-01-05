@@ -100,6 +100,32 @@ function App() {
       setPageCounter(0);
     }
 
+    if(!projectsScroll){
+      setVertStyles([
+        getDimension('vertFirst'),
+        getDimension('vertSecond'),
+        getDimension('vertThird'),
+        getDimension('vertFourth'),
+        getDimension('vertFifth'),
+      ]);
+    } else {
+
+      let firstProjectTop = -(window.innerHeight * projectsIndex);
+      let secondProjectTop = firstProjectTop + window.innerHeight;
+      let thirdProjectTop = secondProjectTop + window.innerHeight;
+      let fourthProjectTop = thirdProjectTop + window.innerHeight;
+      let fifthProjectTop = fourthProjectTop + window.innerHeight;
+
+      setVertStyles([
+        { top: firstProjectTop },
+        { top: secondProjectTop },
+        { top: thirdProjectTop },
+        { top: fourthProjectTop },
+        { top: fifthProjectTop },
+      ]);
+
+    }
+
   }
 
   React.useEffect(()=>{
