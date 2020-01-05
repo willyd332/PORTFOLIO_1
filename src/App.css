@@ -1,38 +1,360 @@
+
+@import url('https://fonts.googleapis.com/css?family=Russo+One&display=swap');
+
 .App {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+div:focus {
+    outline-width: 0;
+}
+
+.mainSection {
+  position: fixed;
+  /* top: 5vh; */
+  margin: 0px;
+  display: block;
+  width: 100vw;
+  /* height: 95vh; */
+  height: 100vh;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#greetingView {
+  background-image: url("./images/slide1.jpg");
+  background-position: center;
+  background-size: 100vw 100vh;
+}
+#aboutMe {
+  background-image: url("./images/slide2.jpg");
+  background-position: center;
+  background-size: 100vw 100vh;
+}
+#skillsView {
+  background-image: url("./images/slide3.jpg");
+  background-position: center;
+  background-size: 100vw 100vh;
+}
+#projectsView {
+  background-image: url("./images/slide4.jpg");
+  background-position: center;
+  background-size: 100vw 100vh;
+}
+#contactMe {
+  background-image: url("./images/slide5.jpg");
+  background-position: center;
+  background-size: 100vw 100vh;
+}
+#Project1 {
+  background-image: url("./images/project1.jpg");
+  background-position: center;
+  background-size: 100vw 100vh;
+}
+#Project2 {
+  background-image: url("./images/project2.jpg");
+  background-position: center;
+  background-size: 100vw 100vh;
+}
+#Project3 {
+  background-image: url("./images/project3.jpg");
+  background-position: center;
+  background-size: 100vw 100vh;
+}
+#Project4 {
+  background-image: url("./images/project4.jpg");
+  background-position: center;
+  background-size: 100vw 100vh;
+}
+#Project5 {
+  background-image: url("./images/project5.jpg");
+  background-position: center;
+  background-size: 100vw 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+.projectBox {
+  position: fixed;
+  /* top: 5vh; */
+  margin: 0px;
+  display: block;
+  width: 100vw;
+  /* height: 95vh; */
+  height: 100vh;
+  text-align: center;
+  /* background-image: url("https://images.unsplash.com/photo-1505562130589-9879683e72da?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+  background-position: center;
+  background-size: cover; */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.toggleBtn {
+  display: inline-block;
+  top: 0;
+  width: 20vw;
+  height: 5vh;
+  border: 1px solid red;
+  margin: -1px;
+  text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.toggleBtn:hover {
+  background: grey;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navBtn {
+  position: fixed;
+  top: 0vh;
+  height: 100vh;
+  width: 15vw;
+  background-color: none;
+  margin: 0px;
+}
+#navLeft {
+  left: -5vw;
+}
+#navRight {
+  right: -5vw;
+}
+#navDown {
+  height: 16vh;
+  top: 86vh;
+  display: none;
+  width: 100vw;
+}
+#navUp {
+  height: 14vh;
+  display: none;
+  width: 100vw;
+}
+.navBtn:hover{
+  background-color: rgb(0,0,0,.1);
+}
+
+.pageTitle {
+  position: absolute;
+  display: block;
+  top: 45vh;
+  left: 45vw;
+  background: white;
+}
+
+#navDirections {
+  position: absolute;
+  width: 80vw;
+  height: 10vh;
+  top: 80vh;
+  margin-left: 10vw;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  animation: slide-in 1s forwards;
+  -webkit-animation: slide-in 1s forwards;
+}
+
+#projNavDirections {
+  position: absolute;
+  width: 80vw;
+  height: 10vh;
+  top: 80vh;
+  margin-left: 10vw;
+  transform: translateX(0%);
+  transform: translateY(0%);
+}
+
+@keyframes slide-in {
+    100% { transform: translateX(0%); }
+}
+
+@-webkit-keyframes slide-in {
+    100% { -webkit-transform: translateX(0%); }
+}
+
+@keyframes slide-out {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
+}
+
+@-webkit-keyframes slide-out {
+    0% { -webkit-transform: translateX(0%); }
+    100% { -webkit-transform: translateX(-100%); }
+}
+
+.leftArrowImg {
+  display: block;
+  position: fixed;
+  left: -8vw;
+  top: 5vh;
+  height: 120%
+}
+.rightArrowImg {
+  display: block;
+  position: fixed;
+  right: -8vw;
+  top: 5vh;
+  height: 120%;
+  -webkit-transform:rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+.downArrowImgRight {
+  display: block;
+  position: fixed;
+  right: 14vw;
+  top: 5vh;
+  height: 120%;
+  -webkit-transform:rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.downArrowImgLeft {
+  display: block;
+  position: fixed;
+  left: 14vw;
+  top: 5vh;
+  height: 120%;
+  -webkit-transform:rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.projNavText {
+  color: rgba(0,0,0,0.3);
+  font-family: 'Russo One';
+  font-style: italic;
+  font-size: 3vh;
+  margin-top: 7vh;
+}
+.subProjNavText {
+  color: rgba(0,0,0,0.3);
+  font-family: 'Russo One';
+  font-style: italic;
+}
+
+.mainNavText {
+  color: rgba(0,0,0,0.3);
+  font-family: 'Russo One';
+  font-style: italic;
+}
+.subNavText {
+  color: rgba(0,0,0,0.3);
+  font-family: 'Russo One';
+  font-style: italic;
+}
+.mainTitleText {
+  font-family: 'Russo One';
+  font-size: 4vw;
+  font-weight: bold;
+  position: absolute;
+  width: 102vw;
+  height: 20vh;
+  top: 35vh;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  animation: slide-in 1s forwards;
+  -webkit-animation: slide-in 1s forwards;
+}
+.subTitleText {
+  font-family: 'Russo One';
+  font-size: 2vw;
+  position: absolute;
+  width: 19vw;
+  top: 50vh;
+  margin-left: 50vw;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  animation: slide-in 1s forwards;
+  -webkit-animation: slide-in 1s forwards;
+}
+
+.aboutMeTextBox {
+  padding: 1px;
+  width: 34vw;
+  height: 57vh;
+  position: absolute;
+  left: 13.8vw;
+  top: 8vh;
+}
+
+.aboutMeParagraph {
+  width: 34vw;
+  height: 52vh;
+  text-align: left;
+  font-family: 'Russo One';
+  font-size: 1.4vw;
+  overflow: scroll;
+  color: #f86045;
+  padding: 5px;
+}
+
+.aboutMeTitle {
+  width: 34vw;
+  font-family: 'Russo One';
+  font-size: 1.8vw;
+  overflow: scroll;
+  color: #f86045;
+  padding: 5px;
+}
+
+.projectExampleBox {
+  display: absolute;
+  border: 2px solid black;
+  width: 50vw;
+  height: 30vh;
+}
+
+.projectExampleImage {
+  display: inline-block;
+  position: relative;
+  width: 50%;
+  height: 80%;
+  border: 1px solid red;
+  float: left;
+  top: 10%;
+  left: 5%;
+}
+
+.projectExampleDescription {
+  float: right;
+  text-align: right;
+  font-size: .8vw;
+  width: 35%;
+  height: 80%;
+  display: inline-block;
+  position: relative;
+  top: 10%;
+  right: 5%;
+}
+
+.linksBox {
+  display: block;
+  position: absolute;
+  width: 50vw;
+  height: 10vh;
+  top: 57vh;
+  margin-left: 45vw;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  animation: slide-in 1s forwards;
+  -webkit-animation: slide-in 1s forwards;
+}
+
+.linkImage {
+  width: 7%;
+  display: inline-block;
+  float: left;
+  margin: 5%;
+  z-index: 2;
+}
+
+.linkImage:hover {
+  opacity: .5;
 }
