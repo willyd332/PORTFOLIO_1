@@ -314,6 +314,7 @@ div:focus {
   width: 20vw;
   height: 20vw;
   border-radius: 50%;
+  box-shadow: 0px 0px 62px -12px rgba(0,0,0,0.72);
 }
 
 .projectExampleImage {
