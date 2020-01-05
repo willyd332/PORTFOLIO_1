@@ -63,6 +63,21 @@ const initialVerticalStyles = [
 
 function App() {
 
+  let mainDiv;
+
+// Focuses on the main div so arrowkey event listeners are activated
+
+  const [styles,setStyles] = React.useState(initialStyles)
+  const [vertStyles,setVertStyles] = React.useState(initialVerticalStyles)
+
+  const [pageCounter,setPageCounter] = React.useState(0);
+
+  const [animating,setAnimating] = React.useState(false);
+
+  const [projectsScroll,setProjectsScroll] = React.useState(false);
+
+  const [projectsIndex,setProjectsIndex] = React.useState(null);
+
   const reset = () => {
     // window.location.reload(false);
 
@@ -87,25 +102,17 @@ function App() {
 
   }
 
-
-  let mainDiv;
-
-// Focuses on the main div so arrowkey event listeners are activated
   React.useEffect(()=>{
-    window.addEventListener('resize',reset)
     mainDiv.focus();
   }, []);
 
-  const [styles,setStyles] = React.useState(initialStyles)
-  const [vertStyles,setVertStyles] = React.useState(initialVerticalStyles)
+  React.useEffect(()=>{
+    window.addEventListener('resize',reset,true);
+    return () => {
+      window.removeEventListener('resize',reset,true);
+    }
+  });
 
-  const [pageCounter,setPageCounter] = React.useState(0);
-
-  const [animating,setAnimating] = React.useState(false);
-
-  const [projectsScroll,setProjectsScroll] = React.useState(false);
-
-  const [projectsIndex,setProjectsIndex] = React.useState(null);
 
   const handleRightKey = () => {
 
