@@ -41,6 +41,11 @@ function GreetingView(props) {
           className="rightArrowImg"
           src="https://image.flaticon.com/icons/png/512/60/60965.png"
         />
+        <p
+          id="navInstruct"
+        >
+          * CLICK OR USE ARROW KEYS
+        </p>
       </div>
     </div>
   );
