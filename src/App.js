@@ -13,11 +13,18 @@ import Project3 from './components/ProjectsPage/Project3.jsx'
 import Project4 from './components/ProjectsPage/Project4.jsx'
 import Project5 from './components/ProjectsPage/Project5.jsx'
 
+// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
+// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
+
 // Variables
 var width = Math.max(window.innerWidth);
 var height = Math.max(window.innerHeight);
 
 console.log(width + " " + height);
+
+const getDimension = () => {
+
+}
 
 const left = {left: 0};
 const second = {left: width};
@@ -45,17 +52,26 @@ const initialVerticalStyles = [
   vertFifth,
 ]
 
+// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
+// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
+
 
 function App() {
 
+// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
+// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
   const reload = () => {
     window.location.reload(false);
   }
 
   window.addEventListener('resize', reload);
+// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
+// ********** REFACTOR ********** REFACTOR ********** REFACTOR ********** REFACTOR
+
 
   let mainDiv;
 
+// Focuses on the main div so arrowkey event listeners are activated
   React.useEffect(()=>{
     mainDiv.focus();
   }, []);
@@ -73,7 +89,8 @@ function App() {
 
   const handleRightKey = () => {
 
-  const divs = document.getElementsByClassName("mainSection");
+    // This grabs each "mainSection" and puts them in array
+    const divs = document.getElementsByClassName("mainSection");
 
     let positionOne = styles[0].left;
     let positionTwo = styles[1].left;
