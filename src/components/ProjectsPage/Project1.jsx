@@ -14,14 +14,7 @@ function Project1(props) {
       className="projectBox"
       style={props.style}
     >
-
-      <ProjectExample
-        projectLink="https://google.com"
-        projectName="TEST"
-        projectDescription={text.exampleProject}
-        imageUrl="http://www.google.com/logos/doodles/2015/googles-new-logo-5078286822539264.3-hp2x.gif"
-        postion={{"top": "10vh"}}
-      />
+      
 
 
     </div>

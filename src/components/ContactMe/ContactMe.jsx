@@ -10,7 +10,7 @@ function ContactMe(props) {
       className="mainSection"
       style={props.style}
     >
-      <h1 className="pageTitle">ContactMe</h1>
+      
     </div>
   );
 }
