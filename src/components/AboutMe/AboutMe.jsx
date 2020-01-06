@@ -23,8 +23,7 @@ function AboutMe(props) {
         <div
           className="aboutMeParagraph"
         >
-          If you want to improve, be content to be thought foolish and stupid with regard to external things. <br />
-          ― Epictetus
+
         </div>
       </div>
 

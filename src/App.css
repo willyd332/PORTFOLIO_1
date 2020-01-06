@@ -310,9 +310,9 @@ div:focus {
 
 
 .projectExampleBox {
-  position: relative;
-  width: 20vw;
-  height: 20vw;
+  position: absolute;
+  width: calc(8vw + 20vh);
+  height: calc(8vw + 20vh);
   border-radius: 50%;
   box-shadow: 0px 0px 62px -12px rgba(0,0,0,0.72);
 }
