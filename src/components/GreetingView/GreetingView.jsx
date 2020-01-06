@@ -13,6 +13,8 @@ function GreetingView(props) {
     >
 
 
+
+
       <div
         className="mainTitleText"
       >
@@ -20,8 +22,16 @@ function GreetingView(props) {
       </div>
 
 
+      <div
+        className="subTitleText"
+      >
+        A Developer
+      </div>
 
-
+      <div className="links">
+        <a href="https://www.linkedin.com/in/willdinneen/" className="button1">LinkedIn</a>
+        <a href="https://github.com/willyd332" className="button1">Github</a>
+      </div>
 
 
       <div

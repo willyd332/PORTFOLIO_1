@@ -132,14 +132,6 @@ div:focus {
   background-color: rgb(0,0,0,.1);
 }
 
-.pageTitle {
-  position: absolute;
-  display: block;
-  top: 45vh;
-  left: 45vw;
-  background: white;
-}
-
 #navDirections {
   position: absolute;
   width: 80vw;
@@ -267,8 +259,8 @@ div:focus {
   font-size: 2vw;
   position: absolute;
   width: 19vw;
-  top: 50vh;
-  margin-left: 50vw;
+  top: 48vh;
+  margin-left: 55vw;
   transform: translateX(-100%);
   -webkit-transform: translateX(-100%);
   animation: slide-in 1s forwards;
@@ -399,4 +391,39 @@ div:focus {
   position: fixed;
   right: -8vw;
   top: 15.5vh;
+}
+
+.button1:hover{
+ color:#000000;
+ background-color:#FFFFFF;
+}
+
+.button1 {
+  color: black;
+  display: inline-block;
+  border: 0.1em solid black;
+  padding: 0.35em 1.2em;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Russo One',sans-serif;
+  font-weight: 300;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.button1:hover {
+  color: white;
+  background-color: black;
+}
+
+.links {
+  position: absolute;
+  left: 50vw;
+  top: 60vh;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  animation: slide-in 1s forwards;
+  -webkit-animation: slide-in 1s forwards;
 }
