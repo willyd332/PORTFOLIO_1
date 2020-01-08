@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/PORTFOLIO_1/static/css/main.59126f55.chunk.css",
+    "main.js": "/PORTFOLIO_1/static/js/main.c949f81c.chunk.js",
+    "main.js.map": "/PORTFOLIO_1/static/js/main.c949f81c.chunk.js.map",
+    "runtime-main.js": "/PORTFOLIO_1/static/js/runtime-main.df0e55be.js",
+    "runtime-main.js.map": "/PORTFOLIO_1/static/js/runtime-main.df0e55be.js.map",
+    "static/js/2.8fd6e034.chunk.js": "/PORTFOLIO_1/static/js/2.8fd6e034.chunk.js",
+    "static/js/2.8fd6e034.chunk.js.map": "/PORTFOLIO_1/static/js/2.8fd6e034.chunk.js.map",
+    "index.html": "/PORTFOLIO_1/index.html",
+    "precache-manifest.626d83b78a4bc26ddd2d9492b118c144.js": "/PORTFOLIO_1/precache-manifest.626d83b78a4bc26ddd2d9492b118c144.js",
+    "service-worker.js": "/PORTFOLIO_1/service-worker.js",
+    "static/css/main.59126f55.chunk.css.map": "/PORTFOLIO_1/static/css/main.59126f55.chunk.css.map",
+    "static/js/2.8fd6e034.chunk.js.LICENSE": "/PORTFOLIO_1/static/js/2.8fd6e034.chunk.js.LICENSE",
+    "static/media/EmphasisDBLogo.png": "/PORTFOLIO_1/static/media/EmphasisDBLogo.92064cc1.png",
+    "static/media/TBD.jpg": "/PORTFOLIO_1/static/media/TBD.1be1436b.jpg",
+    "static/media/dance.png": "/PORTFOLIO_1/static/media/dance.88a287be.png",
+    "static/media/flow.png": "/PORTFOLIO_1/static/media/flow.2e20ba66.png",
+    "static/media/holdemlogo.jpg": "/PORTFOLIO_1/static/media/holdemlogo.2d294fb3.jpg",
+    "static/media/App.css": "/PORTFOLIO_1/static/media/slide5.40bca6f3.jpg",
+    "static/media/vigenere.png": "/PORTFOLIO_1/static/media/vigenere.05476578.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.df0e55be.js",
+    "static/js/2.8fd6e034.chunk.js",
+    "static/css/main.59126f55.chunk.css",
+    "static/js/main.c949f81c.chunk.js"
+  ]
+}
