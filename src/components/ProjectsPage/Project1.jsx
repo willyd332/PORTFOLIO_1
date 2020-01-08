@@ -7,7 +7,7 @@ import ProjectExample from '../ProjectExample/ProjectExample.jsx';
 import text from '../../text/text.js'
 
 // Images
-import holdem from '../../images/holdemlogo.jpg'
+import dance from '../../images/dance.png'
 import emphasis from '../../images/EmphasisDBLogo.png'
 
 function Project1(props) {
@@ -21,10 +21,10 @@ function Project1(props) {
 
       <ProjectExample
         postion = {{top: "13vh", left: "20vw"}}
-        imageUrl = {holdem}
-        projectLink = "https://holdem-io.herokuapp.com/"
-        projectDescription = "Online mulitplayer poker built with React.js and Socket.io"
-        projectName = "Holdem.io"
+        imageUrl = {dance}
+        projectLink = "https://willyd332.github.io/Dance-Dance/"
+        projectDescription = "An HTML canvas music game"
+        projectName = "Dance Dance"
       />
 
 

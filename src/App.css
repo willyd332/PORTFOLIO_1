@@ -274,25 +274,25 @@ div:focus {
   position: absolute;
   left: 13.8vw;
   top: 8vh;
+  overflow: scroll;
 }
 
 .aboutMeParagraph {
   width: 34vw;
-  height: 52vh;
   text-align: left;
   font-family: 'Russo One';
-  font-size: 1.4vw;
-  overflow: scroll;
-  color: #f86045;
+  font-size: calc(.8vw + 1.3vh);
+  color: #4588F9;
   padding: 5px;
 }
 
 .aboutMeTitle {
+  margin-top: 10px;
   width: 34vw;
   font-family: 'Russo One';
   font-size: 1.8vw;
   overflow: scroll;
-  color: #f86045;
+  color: #ECC730;
   padding: 5px;
 }
 
