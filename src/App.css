@@ -427,3 +427,13 @@ div:focus {
   animation: slide-in 1s forwards;
   -webkit-animation: slide-in 1s forwards;
 }
+
+#underConstruction {
+  position: absolute;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://images.unsplash.com/photo-1593505681742-8cbb6f44de25?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2978&q=80");
+  background-size: cover;
+  background-position: center;
+}

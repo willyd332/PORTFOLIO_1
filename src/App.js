@@ -128,9 +128,9 @@ function App() {
 
   }
 
-  React.useEffect(()=>{
-    mainDiv.focus();
-  }, []);
+  // React.useEffect(()=>{
+  //   mainDiv.focus();
+  // }, []);
 
   React.useEffect(()=>{
     window.addEventListener('resize',reset,true);
@@ -566,7 +566,15 @@ function App() {
   }
 
   return (
+
     <div
+      id="underConstruction"
+    >
+
+    </div>
+
+
+    /* <div
     className="App"
     tabIndex="0"
     onKeyDown={(e)=>{checkKeyPressed(e)}}
@@ -621,7 +629,7 @@ function App() {
       >
       </div>
 
-    </div>
+    </div> */
   );
 }
 
